@@ -178,8 +178,6 @@ const Question: React.FC<{
       </div>
     )}
     <div className={`flex flex-col items-center  ${question.image ? 'md:w-1/2' : ''} p-4 ${question.type === 'text-only' ? 'max-w-2xl mx-auto' : ''}`}>
-    { selectedAnswer }
-
       <div className=" max-w-[720px] flex flex-col">
         <QuestionTitle number={questionNumber} title={question.question} />
         {question.type === 'multiple' && (

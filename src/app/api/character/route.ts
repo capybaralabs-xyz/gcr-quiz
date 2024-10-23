@@ -14,8 +14,8 @@ export async function POST(req: Request) {
       id SERIAL PRIMARY KEY,
       walletAddress VARCHAR(255) UNIQUE,
       character VARCHAR(255) NOT NULL,
-        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-        updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+      created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+      updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
     )
   `;
 
@@ -28,6 +28,7 @@ export async function POST(req: Request) {
       DO UPDATE SET 
         character = EXCLUDED.character,
         updated_at = CURRENT_TIMESTAMP
+      WHERE EXCLUDED.walletAddress IS NOT NULL
       RETURNING *
     `;
     

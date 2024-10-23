@@ -18,23 +18,21 @@ function ResultPage({
   const { address: walletAddress } = useAccount()
 
   const handleAction = useCallback(async () => {
-    if (walletAddress) {
-      try {
-        const response = await fetch('/api/character', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({ character, walletAddress }),
-        })
-        if (!response.ok) {
-          console.error('Failed to send data to /api/character')
-        } else {
-          window.location.replace('https://ladder.top')
-        }
-      } catch (error) {
-        console.error('Error:', error)
+    try {
+      const response = await fetch('/api/character', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ character, walletAddress }),
+      })
+      if (!response.ok) {
+        console.error('Failed to send data to /api/character')
+      } else {
+        // window.location.replace('https://ladder.top')
       }
+    } catch (error) {
+      console.error('Error:', error)
     }
   }, [character, walletAddress])
 
@@ -71,7 +69,7 @@ function ResultPage({
           <div className={`w-full md:w-1/2 p-4 md:p-8 flex flex-col justify-center order-2`}>
 
             <h1 className="text-3xl md:text-4xl font-bold mb-4">{character}</h1>
-            <p className="text-sm md:text-base text-gray-600 mb-6 whitespace-pre">{intro}</p>
+            <p className="text-sm md:text-base text-gray-600 mb-6 whitespace-pre-wrap">{intro}</p>
 {/*             <div className="flex space-x-4 mb-6">
               <a href={facebookUrl} className="text-blue-600 hover:text-blue-800" aria-label="Share on Facebook">
                 <Facebook size={20} />
@@ -106,6 +104,7 @@ function ResultPage({
 
 export default function CharacterResult({params}: {params: {character: string}}) {
   const character = decodeURIComponent(params.character)
+  console.log(character)
   const characterData = CharacterData[character as keyof typeof CharacterData]
   const resultData: Props = {
     character: character,
