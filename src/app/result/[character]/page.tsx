@@ -29,7 +29,7 @@ function ResultPage({
       if (!response.ok) {
         console.error('Failed to send data to /api/character')
       } else {
-        // window.location.replace('https://ladder.top')
+        window.location.replace('https://ladder.top')
       }
     } catch (error) {
       console.error('Error:', error)
