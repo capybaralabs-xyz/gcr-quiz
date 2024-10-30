@@ -2,7 +2,7 @@ import { NextResponse } from 'next/server';
 import { sql  } from '@vercel/postgres';
 
 interface Character {
-  walletAddress?: string; 
+  walletAddress?: string;
   character: string;
 }
 
@@ -12,7 +12,7 @@ export async function POST(req: Request) {
     await sql`
     CREATE TABLE IF NOT EXISTS Character (
       id SERIAL PRIMARY KEY,
-      walletAddress VARCHAR(255) UNIQUE,
+      wallet_address VARCHAR(255) UNIQUE,
       character VARCHAR(255) NOT NULL,
       created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
       updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
@@ -22,16 +22,15 @@ export async function POST(req: Request) {
     const data: Character = await req.json();
 
     const result = await sql`
-      INSERT INTO Character (walletAddress, character, created_at, updated_at)
+      INSERT INTO Character (wallet_address, character, created_at, updated_at)
       VALUES (${data.walletAddress || null}, ${data.character}, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP)
-      ON CONFLICT (walletAddress) 
+      ON CONFLICT (wallet_address) 
       DO UPDATE SET 
         character = EXCLUDED.character,
         updated_at = CURRENT_TIMESTAMP
-      WHERE EXCLUDED.walletAddress IS NOT NULL
       RETURNING *
     `;
-    
+
     const newWallet = result.rows[0];
     return NextResponse.json(newWallet, { status: 201 });
   } catch (error) {

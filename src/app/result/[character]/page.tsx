@@ -1,6 +1,6 @@
 "use client"
 // import { Facebook, Twitter, Linkedin } from 'lucide-react'
-import { useCallback, useEffect } from 'react'
+import {useCallback, useEffect, useState} from 'react'
 import { useAccount   } from 'wagmi'
 import CharacterData from '@/assets/JSON/CharacterResult'
 import { ConnectButton } from '@rainbow-me/rainbowkit'
@@ -16,8 +16,10 @@ function ResultPage({
   intro,
 }: Props) {
   const { address: walletAddress } = useAccount()
-
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const handleAction = useCallback(async () => {
+    if(isSubmitting) return
+    setIsSubmitting(true)
     try {
       const response = await fetch('/api/character', {
         method: 'POST',
@@ -33,6 +35,8 @@ function ResultPage({
       }
     } catch (error) {
       console.error('Error:', error)
+    } finally {
+      setIsSubmitting(false)
     }
   }, [character, walletAddress])
 
@@ -48,7 +52,7 @@ function ResultPage({
       window.removeEventListener('keydown', handleKeyPress)
     }
   }, [handleKeyPress])
-  
+
   return (
     <div className="min-h-screen bg-gray-100 flex flex-col p-4">
       <header className="sticky top-4 right-4 z-10 flex justify-end mb-4">
@@ -81,8 +85,9 @@ function ResultPage({
                 <Linkedin size={20} />
               </a>
             </div> */}
-            <button className="bg-blue-600 text-white font-bold py-2 md:py-3 px-4 md:px-6 rounded-lg hover:bg-blue-700 transition duration-300 mb-2 text-sm md:text-base"
-             onClick={handleAction}>
+            <button className={`bg-blue-600 text-white font-bold py-2 md:py-3 px-4 md:px-6 rounded-lg hover:bg-blue-700 transition duration-300 mb-2 text-sm md:text-base
+            ${isSubmitting ? 'opacity-50 cursor-not-allowed' : 'hover:bg-blue-700'}`}
+             disabled={isSubmitting} onClick={handleAction}>
               Say &apos;NO&apos; to Copycats!
             </button>
             <p className="text-xs md:text-sm text-gray-500">press Enter ↵</p>
@@ -115,3 +120,4 @@ export default function CharacterResult({params}: {params: {character: string}})
 
   return <ResultPage {...resultData} />
 }
+

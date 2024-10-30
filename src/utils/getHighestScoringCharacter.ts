@@ -6,7 +6,7 @@ type CharacterType = {
     Character: string;
     [key: string]: { id: string; text: string } | string;
   };
-  
+
 
 function getHighestScoringCharacter(userAnswers: AnswerType): string {
   let highestScore = 0;
@@ -17,7 +17,6 @@ function getHighestScoringCharacter(userAnswers: AnswerType): string {
 
     for (const [questionId, answerId] of Object.entries(userAnswers)) {
         const answer = character[questionId] as { id: string; text: string };
-        console.log(answer)
         if (answer.id === answerId) {
             score++;
       }

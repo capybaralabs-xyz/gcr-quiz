@@ -99,11 +99,11 @@ const ImageOption: React.FC<{
       </div>
     )}
     <div className="h-40 mb-2 ">
-      
-      <Image 
+
+      <Image
         src={option.image}
         alt={option.label}
-        width={160} 
+        width={160}
         height={160}
         className="w-full h-full rounded object-contain"
       />
@@ -162,7 +162,8 @@ const Question: React.FC<{
   selectedAnswer: string | undefined;
   onAnswer: (answer: string) => void;
   onSubmit: () => void;
-}> = ({ question, questionNumber, questionLength, selectedAnswer, onAnswer, onSubmit }) => (
+  isSubmitting: boolean;
+}> = ({ question, questionNumber, questionLength, selectedAnswer, onAnswer, onSubmit, isSubmitting}) => (
   <motion.div
     key={question.id}
     initial={{ opacity: 0, y: 50 }}
@@ -191,12 +192,15 @@ const Question: React.FC<{
         )}
         {
           questionLength === questionNumber && selectedAnswer && (
-        <button
-          onClick={onSubmit}
-          className="mt-4 px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors self-start"
-        >
-          Submit
-        </button>
+          <button
+            onClick={onSubmit}
+            disabled={isSubmitting}
+            className={`mt-4 px-6 py-2 bg-blue-600 text-white rounded-lg transition-colors self-start ${
+              isSubmitting ? 'opacity-50 cursor-not-allowed' : 'hover:bg-blue-700'
+            }`}
+          >
+            {isSubmitting ? 'Submitting...' : 'Submit'}
+          </button>
           )
         }
       </div>
@@ -210,16 +214,17 @@ export default function FullScreenSurvey() {
   const [answers, setAnswers] = useState<Record<string, string>>({})
   const containerRef = useRef<HTMLDivElement>(null)
   const [isScrolling, setIsScrolling] = useState(false)
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const questions: QuestionType[] = Questions as QuestionType[];
 
 
   useEffect(() => {
     const handleWheel = (e: WheelEvent) => {
-      if (isScrolling) return
-      
+      if (isScrolling || isSubmitting) return
+
       setIsScrolling(true)
-      setTimeout(() => setIsScrolling(false), 1000) // Debounce scrolling
+      setTimeout(() => setIsScrolling(false), 1000)
 
       if (e.deltaY > 0 && currentQuestion < questions.length - 1 && answers[questions[currentQuestion].id]) {
         setCurrentQuestion(prev => prev + 1)
@@ -238,7 +243,7 @@ export default function FullScreenSurvey() {
         container.removeEventListener('wheel', handleWheel)
       }
     }
-  }, [currentQuestion, questions.length, answers, isScrolling, questions])
+  }, [currentQuestion, questions.length, answers, isScrolling, questions, isSubmitting])
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -260,6 +265,7 @@ export default function FullScreenSurvey() {
   }
 
   const handleSubmit = () => {
+    setIsSubmitting(true)
     const result = getHighestScoringCharacter(answers);
     router.push(`/result/${encodeURIComponent(result)}`);
   }
@@ -271,7 +277,7 @@ export default function FullScreenSurvey() {
         <div className="md:fixed md:top-2 md:right-4 sticky top-1 flex justify-end z-[1000]">
            <ConnectButton/>
         </div>
-       
+
         <AnimatePresence mode="wait">
           <Question
             key={questions[currentQuestion].id}
@@ -281,6 +287,7 @@ export default function FullScreenSurvey() {
             selectedAnswer={answers[questions[currentQuestion].id]}
             onAnswer={handleAnswer}
             onSubmit={handleSubmit}
+            isSubmitting={isSubmitting}
           />
         </AnimatePresence>
         <NavigationButtons
