@@ -14,6 +14,7 @@
   }
 }
 
+
 body {
   color: var(--foreground);
   background: var(--background);
@@ -24,4 +25,18 @@ body {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+.wallet-adapter-button {
+  background: #4F46E5 !important;
+  padding: 12px 24px !important;
+  border-radius: 8px !important;
+  color: white !important;
+  font-weight: 600 !important;
+  border: none !important;
+}
+
+.wallet-adapter-button:hover {
+  background: #4338CA !important;
+  cursor: pointer !important;
 }

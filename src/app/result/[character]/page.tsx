@@ -1,9 +1,13 @@
 "use client"
 // import { Facebook, Twitter, Linkedin } from 'lucide-react'
 import {useCallback, useEffect, useState} from 'react'
-import { useAccount   } from 'wagmi'
 import CharacterData from '@/assets/JSON/CharacterResult'
-import { ConnectButton } from '@rainbow-me/rainbowkit'
+import { useWallet } from '@solana/wallet-adapter-react';
+import dynamic from 'next/dynamic';
+const WalletMultiButton = dynamic(
+  () => import('@solana/wallet-adapter-react-ui').then(mod => mod.WalletMultiButton),
+  { ssr: false }
+);
 interface Props {
   character: string
   intro: string
@@ -15,7 +19,8 @@ function ResultPage({
   character,
   intro,
 }: Props) {
-  const { address: walletAddress } = useAccount()
+  const { publicKey } = useWallet()
+
   const [isSubmitting, setIsSubmitting] = useState(false);
   const handleAction = useCallback(async () => {
     if(isSubmitting) return
@@ -26,7 +31,7 @@ function ResultPage({
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ character, walletAddress }),
+        body: JSON.stringify({ character, walletAddress: publicKey?.toString() }),
       })
       if (!response.ok) {
         console.error('Failed to send data to /api/character')
@@ -38,7 +43,7 @@ function ResultPage({
     } finally {
       setIsSubmitting(false)
     }
-  }, [character, walletAddress])
+  }, [character, isSubmitting, publicKey])
 
   const handleKeyPress = useCallback((event: KeyboardEvent) => {
     if (event.key === 'Enter') {
@@ -56,7 +61,7 @@ function ResultPage({
   return (
     <div className="min-h-screen bg-gray-100 flex flex-col p-4">
       <header className="sticky top-4 right-4 z-10 flex justify-end mb-4">
-         <ConnectButton/>
+         <WalletMultiButton/>
       </header>
       <main className="flex-grow flex flex-col md:flex-row items-center justify-center">
         <div className="bg-white rounded-lg justify-center shadow-lg overflow-hidden w-full max-w-6xl md:h-[80vh] flex flex-col md:flex-row">

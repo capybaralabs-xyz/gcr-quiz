@@ -6,7 +6,12 @@ import { ChevronUp, ChevronDown, Check } from "lucide-react";
 import getHighestScoringCharacter from '@/utils/getHighestScoringCharacter'
 import Image from 'next/image'
 import { useRouter } from 'next/navigation';
-import { ConnectButton } from '@rainbow-me/rainbowkit';
+import dynamic from 'next/dynamic'
+
+const WalletMultiButton = dynamic(
+  () => import('@solana/wallet-adapter-react-ui').then(mod => mod.WalletMultiButton),
+  { ssr: false }
+);
 
 
 type QuestionType = {
@@ -275,7 +280,7 @@ export default function FullScreenSurvey() {
       <div className="min-h-screen flex flex-col justify-between ">
         <ProgressBar current={currentQuestion} total={questions.length} />
         <div className="md:fixed md:top-2 md:right-4 sticky top-1 flex justify-end z-[1000]">
-           <ConnectButton/>
+           <WalletMultiButton/>
         </div>
 
         <AnimatePresence mode="wait">
