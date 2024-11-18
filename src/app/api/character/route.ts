@@ -10,7 +10,7 @@ interface Character {
 export async function POST(req: Request) {
   try {
     await sql`
-    CREATE TABLE IF NOT EXISTS Character (
+    CREATE TABLE IF NOT EXISTS users (
       id SERIAL PRIMARY KEY,
       wallet_address VARCHAR(255) UNIQUE,
       character VARCHAR(255) NOT NULL,
@@ -22,7 +22,7 @@ export async function POST(req: Request) {
     const data: Character = await req.json();
 
     const result = await sql`
-      INSERT INTO Character (wallet_address, character, created_at, updated_at)
+      INSERT INTO users (wallet_address, character, created_at, updated_at)
       VALUES (${data.walletAddress || null}, ${data.character}, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP)
       ON CONFLICT (wallet_address) 
       DO UPDATE SET 
@@ -43,7 +43,7 @@ export async function POST(req: Request) {
 export async function GET() {
 
   try {
-    const result = await sql`SELECT * FROM Character`
+    const result = await sql`SELECT * FROM users`
     return NextResponse.json(result.rows, { status: 200 });
   } catch (error) {
     console.error('Database error:', error);
