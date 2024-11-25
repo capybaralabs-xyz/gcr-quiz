@@ -61,12 +61,12 @@ export default function Question({
         >
             <QuestionDescription questionText={question.question}  className={question.questionTextClassName} />
             <Answer
-                questionOptions={question}
                 currentQuestion={questionNumber}
                 totalQuestions={questionLength}
+                questionOptions={question}
                 selectedAnswer={selectedAnswer}
-                className={question.answerClassName}
                 onSelect={onAnswer}
+                className={question.answerClassName}
             />
             {
                 question.type === 'multiple' && (

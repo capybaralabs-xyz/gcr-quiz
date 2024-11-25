@@ -10,7 +10,6 @@ interface QuestionDialogProps {
     totalQuestions: number
     className?: string
     selectedAnswer: string | undefined
-    options: string[]
     onSelect: (option: string) => void
     onClose?: () => void
 }
