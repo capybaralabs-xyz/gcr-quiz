@@ -15,7 +15,7 @@ export const ImageBox = ({ image, className }: { image: string, className?: stri
                     <span className="text-base font-diatype-mono tablet:text-[20px] tablet:lea">DETAILS</span>
                     <button
                         onClick={test} // Ensure this is within a Client Component
-                        className="rounded hover:bg-gray-600"
+                        className="rounded hover:scale-105 transition-transform duration-150"
                     > 
                         <X className="h-4 w-4" />
                     </button>
@@ -40,7 +40,7 @@ export const IndexDetailsModal = ({ className }: { className?: string }) => {
                     <span className="text-base font-diatype-mono">DETAILS</span>
                     <button
                         onClick={test} // Ensure this is within a Client Component
-                        className="rounded hover:bg-gray-600"
+                        className="rounded hover:scale-105 transition-transform duration-150"
                     > 
                         <X className="h-4 w-4" />
                     </button>

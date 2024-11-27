@@ -2,9 +2,8 @@
   {
     "id": "q1",
     "type": "multiple",
-    "question": "How long have you been in crypto for?",
+    "question": "How long have you been in crypto?",
     "image": "/questionImages/q1.png",
-    "imagePosition": "right",
     "answerClassName": "mt-9",
     "imageBoxClassName": "-mt-5 w-[144px] h-[216px]",
     "options": [
@@ -17,7 +16,7 @@
   {
     "id": "q2",
     "type": "multiple",
-    "question": "How would you evaluate your trading accuracy?",
+    "question": "What is your trading accuracy?",
     "image": "/questionImages/q2.png",
     "imagePosition": "right",
     "questionTextClassName": "w-[165px] mt-[-22px]",
@@ -26,50 +25,36 @@
     "options": [
       { "id": "a1", "text": "Lisan al Gaib" },
       { "id": "a2", "text": "Market whisperer" },
-      { "id": "a3", "text": "It ain't much, but it's honest work." },
-      { "id": "a4", "text": "You miss every shot you don't take." },
-      { "id": "a5", "text": "I'm on my 3rd liquidation, but who's counting?" }
+      { "id": "a3", "text": "It ain't much but it's honest work" },
+      { "id": "a4", "text": "You miss every shot you don't take" },
+      { "id": "a5", "text": "I'm on my 3rd liquidation, but who's counting? 😥" }
     ]
   },
   {
     "id": "q3",
-    "type": "image-grid",
-    "question": "What was your favourite childhood breakfast?",
-    "questionTextClassName": "w-[165px] mt-[-22px] ",
-    "answerClassName": "mt-7 tablet:w-[712px] tablet:gap-[10px] laptop:w-[1106px] laptop:mt-[-30px]",
-    "imageBoxClassName": "-mt-8 w-[244px] h-[176px]",
-    "imageOptions": [
-      { "id": "a1", "image": "/answerImages/q3_a1.png", "label": "Paratha and Chai" },
-      { "id": "a2", "image": "/answerImages/q3_a2.png", "label": "English Breakfast" },
-      { "id": "a3", "image": "/answerImages/q3_a3.png", "label": "Congee" },
-      { "id": "a4", "image": "/answerImages/q3_a4.png", "label": "Pancakes and Bacon" },
-      { "id": "a5", "image": "/answerImages/q3_a5.png", "label": "Cheese Sandwich" }
-    ]
-  },
-  {
-    "id": "q4",
     "type": "multiple",
-    "question": "If you were to describe your degeneracy/preferred trading leverage, which one would best suit you?",
-    "image": "/questionImages/q4.png",
+    "question": "Degen level check:",
+    "image": "/questionImages/q3.png",
     "imagePosition": "right",
     "questionTextClassName": "mt-[-38px] w-[231px] tablet:w-[405px] laptop:w-[600px] laptop:w-[439px] desktop:w-[562px]",
     "answerClassName": "-mt-1 tablet:w-[737px] tablet:-mt-11  tablet:z-[100] laptop:w-[949px] laptop:mt-[-43px] desktop:w-[1090px] desktop:mt-[-30px]",
     "imageBoxClassName": "-mt-8 w-[212px] h-[178px] tablet:w-[427px] tablet:h-[383px] tablet:top-[587px] tablet:right-[71px] tablet:left-auto laptop:w-[427px] laptop:left-[270px] laptop:top-[644px] desktop:w-[547px] desktop:top-[100px] desktop:left-[10px]",
     "options": [
-      { "id": "a1", "text": "It's not gambling if you're winning!" },
-      { "id": "a2", "text": "Spot only!" },
-      { "id": "a3", "text": "Efficient capital allocatooor (1-5x leverage)." },
-      { "id": "a4", "text": "Too young to die, too old to rock 'n roll (5-10x leverage)." },
-      { "id": "a5", "text": "Trust me, bro (10-20x leverage)!" },
-      { "id": "a6", "text": "YOLO (20-100x leverage)!" },
-      { "id": "a7", "text": "My safe word is 'Keep going' (100x+ leverage)." }
+      { "id": "a1", "text": "It's not gambling if you're winning" },
+      { "id": "a2", "text": "Spot only" },
+      { "id": "a3", "text": "Efficient capital allocatooor (1-5x)" },
+      { "id": "a4", "text": "Too young to die, too old to rock 'n roll (5-10x)" },
+      { "id": "a5", "text": "Trust me, bro (10-20x)" },
+      { "id": "a6", "text": "YOLO (20-100x)" },
+      { "id": "a7", "text": "My safe word is 'Keep going' aka 100x+" }
     ]
   },
+
   {
-    "id": "q5",
+    "id": "q4",
     "type": "multiple",
-    "question": "What is your networth mainly stored in?", 
-    "image": "/questionImages/q5.png",
+    "question": "In what do you store your networth?", 
+    "image": "/questionImages/q4.png",
     "imagePosition": "left",
     "questionTextClassName": "mt-[-38px] w-[181px] laptop:w-[439px] desktop:w-[454px]",
     "answerClassName": "mt-[50px] tablet:w-[167px] tablet:mt-[82px] laptop:w-[595px] laptop:mt-4 ",
@@ -84,10 +69,10 @@
     ]
   },
   {
-    "id": "q6",
+    "id": "q5",
     "type": "multiple",
     "question": "Do you have any sidehustles?",
-    "image": "/questionImages/q6.png",
+    "image": "/questionImages/q5.png",
     "imagePosition": "right",
     "questionTextClassName": "mt-[-38px] w-[187px] laptop:w-[454px] desktop:w-[454px]",
     "answerClassName": "mt-5 tablet:mt-[60px] tablet:w-[281px] laptop:w-[487px] laptop:mt-[-10px] desktop:w-[670px] desktop:mt-[-10px]",
@@ -98,15 +83,15 @@
       { "id": "a3", "text": "Memelord" },
       { "id": "a4", "text": "Government service" },
       { "id": "a5", "text": "Pimping" },
-      { "id": "a6", "text": "Hoarding/Collecting" },
+      { "id": "a6", "text": "Collectooor" },
       { "id": "a7", "text": "Gambling" }
     ]
   },
   {
-    "id": "q7",
+    "id": "q6",
     "type": "multiple",
     "question": "Who would be your arch nemesis?",
-    "image": "/questionImages/q7.png",
+    "image": "/questionImages/q6.png",
     "imagePosition": "right",
     "questionTextClassName": "mt-[-38px] w-[187px] laptop:w-[454px]",
     "answerClassName": "mt-[26px] tablet:w-[327px] tablet:mt-[82px] laptop:w-[409px] laptop:mt-[-10px] desktop:w-[464px]",
@@ -121,104 +106,54 @@
     ]
   },
   {
-    "id": "q8",
+    "id": "q7",
     "type": "image-grid",
     "question": "Which is your spirit animal?",
     "answerClassName": "mt-[18px] tablet:w-[712px] tablet:mt-0 laptop:mt-[-30px] laptop:w-[1106px]",
     "imageOptions": [
-      { "id": "a1", "image": "/answerImages/q8_a1.png", "label": "Bird" },
-      { "id": "a2", "image": "/answerImages/q8_a2.png", "label": "Dog" },
-      { "id": "a3", "image": "/answerImages/q8_a3.png", "label": "Cobra" },
-      { "id": "a4", "image": "/answerImages/q8_a4.png", "label": "Sloth" },
-      { "id": "a5", "image": "/answerImages/q8_a5.png", "label": "Panda" },
-      { "id": "a6", "image": "/answerImages/q8_a6.png", "label": "Unicorn" },
-      { "id": "a7", "image": "/answerImages/q8_a7.png", "label": "Rabbit" },
-      { "id": "a8", "image": "/answerImages/q8_a8.png", "label": "Squirrel" }
+      { "id": "a1", "image": "/answerImages/q7_a1.png", "label": "Bird" },
+      { "id": "a2", "image": "/answerImages/q7_a2.png", "label": "Afghan hound" },
+      { "id": "a3", "image": "/answerImages/q7_a3.png", "label": "Cobra" },
+      { "id": "a4", "image": "/answerImages/q7_a4.png", "label": "Sloth" },
+      { "id": "a5", "image": "/answerImages/q7_a5.png", "label": "Panda" },
+      { "id": "a6", "image": "/answerImages/q7_a6.png", "label": "Unicorn" },
+      { "id": "a7", "image": "/answerImages/q7_a7.png", "label": "Rabbit" },
+      { "id": "a8", "image": "/answerImages/q7_a8.png", "label": "Squirrel" }
+    ]
+  },
+  {
+    "id": "q8",
+    "type": "image-grid",
+    "question": "Which memecoin cult is the best?",
+    "answerClassName": "mt-[18px] tablet:w-[712px] tablet:mt-0 laptop:mt-[-30px] laptop:w-[1106px]",
+    "imageOptions": [
+      { "id": "a1", "image": "/answerImages/q8_a1.png", "label": "Sigma" },
+      { "id": "a2", "image": "/answerImages/q8_a2.png", "label": "Pepe" },
+      { "id": "a3", "image": "/answerImages/q8_a3.png", "label": "Retardio" },
+      { "id": "a4", "image": "/answerImages/q8_a4.png", "label": "SPX6900" },
+      { "id": "a5", "image": "/answerImages/q8_a5.png", "label": "Mog" },
+      { "id": "a6", "image": "/answerImages/q8_a6.png", "label": "WIF" }
     ]
   },
   {
     "id": "q9",
-    "type": "multiple",
-    "question": "How versed are you in crypto?",
-    "image": "/questionImages/q9.png",
-    "imagePosition": "right",
-    "questionTextClassName": "mt-[-38px] w-[165px] laptop:w-[390px]",
-    "answerClassName": "mt-9 tablet:w-[361px] tablet:mt-[80px] laptop:w-[454px] laptop:mt-[38px] desktop:w-[517px] ",
-    "imageBoxClassName": "-mt-8 w-[220px] h-[243px] tablet:w-[408px]  tablet:h-[408px] tablet:top-[580px] tablet:left-auto tablet:right-[26px] laptop:w-[408px] laptop:top-[320px] laptop:left-[87px] desktop:w-[700px] desktop:top-[173px] desktop:left-[120px]",
-    "options": [
-      { "id": "a1",  "text": "Can exploit your protocol." },
-      { "id": "a2",  "text": "I'm just an ape." },
-      { "id": "a3",  "text": "On-chain enjoyooor." },
-      { "id": "a4",  "text": "Node runnooor." },
-      { "id": "a5",  "text": "What is Metamask?" }
-    ]
-  },
-  {
-    "id": "q10",
-    "type": "image-grid",
-    "question": "What nft community represents you the best?",
-    "questionTextClassName": "mt-[-38px] w-[156px] laptop:w-[370px]",
-    "answerClassName": "mt-[53px] tablet:mt-[100px] tablet:w-[712px] laptop:w-[1106px] laptop:mt-[-30px]",
-    "objectFit": "cover",
-    "imageOptions": [
-      { "id": "a1", "image": "/answerImages/q10_a1.png", "label": "CryptoPunks" },
-      { "id": "a2", "image": "/answerImages/q10_a2.png", "label": "Milady" },
-      { "id": "a3", "image": "/answerImages/q10_a3.png", "label": "Reddit Avatars" },
-      { "id": "a4", "image": "/answerImages/q10_a4.png", "label": "World of Women" },
-      { "id": "a5", "image": "/answerImages/q10_a5.png", "label": "Bored Ape Yacht Club NFTs" }
-    ]
-  },
-  {
-    "id": "q11",
-    "type": "image-grid",
-    "question": "Which is your favorite Disney princess?",
-    "questionTextClassName": "mt-[-38px] w-[165px]",
-    "answerClassName": "mt-6 tablet:w-[712px] tablet:mt-[30px] laptop:w-[1106px] laptop:mt-[-30px]",
-    "imageBoxClassName": "-mt-8 w-[220px] h-[243px]",
-    "imageOptions": [
-      { "id": "a1", "image": "/answerImages/q11_a1.png", "label": "Sleeping Beauty" },
-      { "id": "a2", "image": "/answerImages/q11_a2.png", "label": "Rapunzel" },
-      { "id": "a3", "image": "/answerImages/q11_a3.png", "label": "Jasmine" },
-      { "id": "a4", "image": "/answerImages/q11_a4.png", "label": "Anna" },
-      { "id": "a5", "image": "/answerImages/q11_a5.png", "label": "Tiana" },
-      { "id": "a6", "image": "/answerImages/q11_a6.png", "label": "Elsa" }
-    ]
-  },
-  {
-    "id": "q12",
     "type": "image-grid",
     "question": "Which is your favourite meme?",
     "questionTextClassName": "",
     "answerClassName": "mt-[30px] tablet:w-[712px] tablet:mt-[30px] laptop:w-[1106px] laptop:mt-[-30px]",
     "imageOptions": [
-      { "id": "a1", "image": "/answerImages/q12_a1.png", "label": "Mind Expansion" },
-      { "id": "a2", "image": "/answerImages/q12_a2.png", "label": "Always Has Been" },
-      { "id": "a3", "image": "/answerImages/q12_a3.png", "label": "Wojak" },
-      { "id": "a4", "image": "/answerImages/q12_a4.png", "label": "IQ Bell Curve" },
-      { "id": "a5", "image": "/answerImages/q12_a5.png", "label": "Stalker" },
-      { "id": "a6", "image": "/answerImages/q12_a6.png", "label": "It ain't much..." }
+      { "id": "a1", "image": "/answerImages/q9_a1.png", "label": "multiple minds/Lisan Al-Gaib" },
+      { "id": "a2", "image": "/answerImages/q9_a2.png", "label": "always Has Been" },
+      { "id": "a3", "image": "/answerImages/q9_a3.png", "label": "wojak" },
+      { "id": "a4", "image": "/answerImages/q9_a4.png", "label": "IQ Bell Curve" },
+      { "id": "a5", "image": "/answerImages/q9_a5.png", "label": "horny black dude spying" },
+      { "id": "a6", "image": "/answerImages/q9_a6.png", "label": "it ain't much, but it's honest work" }
     ]
   },
   {
-    "id": "q13",
-    "type": "image-grid",
-    "question": "What is your favourite beverage?",
-    "answerClassName": "mt-6 tablet:w-[712px] tablet:mt-[10px] laptop:w-[1106px] laptop:mt-[-30px]",
-    "imageBoxClassName": "-mt-8 w-[220px] h-[243px]",
-    "imageOptions": [
-      { "id": "a1", "image": "/answerImages/q13_a1.png", "label": "Water" },
-      { "id": "a2", "image": "/answerImages/q13_a2.png", "label": "Beer" },
-      { "id": "a3", "image": "/answerImages/q13_a3.png", "label": "Coffee" },
-      { "id": "a4", "image": "/answerImages/q13_a4.png", "label": "Long Island Tea" },
-      { "id": "a5", "image": "/answerImages/q13_a5.png", "label": "Sex on the beach" },
-      { "id": "a6", "image": "/answerImages/q13_a6.png", "label": "Tequila" },
-      { "id": "a7", "image": "/answerImages/q13_a7.png", "label": "Whiskey" }
-    ]
-  },
-  {
-    "id": "q14",
+    "id": "q10",
     "type": "text-only",
-    "question": "If you were to discover a smart contract vulnerability that would allow you to anonymously drain it, what would you do?",
+    "question": "You discovered a smart contract vulnerability. What would you do?",
     "questionTextClassName": "mt-[-38px] w-[242px] tablet:w-[423px] laptop:w-[587px] desktop:w-[587px]",
     "answerClassName": "mt-[42.5px] tablet:w-[657px] tablet:mt-[153px] laptop:w-[844px] desktop:w-[969px]",
     "options": [
@@ -228,16 +163,32 @@
     ]
   },
   {
-    "id": "q15",
+    "id": "q11",
     "type": "text-only",
-    "question": "If you were a Fantasy Top hero, how would you approach revenue sharing?",
+    "question": "You found the next gem on Pump Fun. When would you share the contract address with your group chat?",
     "questionTextClassName": "mt-[-38px] w-[220px] tablet:w-[410px] laptop:w-[535px]",
     "answerClassName": "mt-[100px] tablet:w-[702px] tablet:mt-[133px] laptop:w-[904px]",
     "imageBoxClassName": "-mt-8 w-[220px] h-[243px] mt-",
     "options": [
-      { "id": "a1", "text": "Share 100% with card holders." },
-      { "id": "a2", "text": "Share 50% with card holders." },
-      { "id": "a3", "text": "Share 0% with card holders and keep it all for yourself." }
+      { "id": "a1", "text": "Right away." },
+      { "id": "a2", "text": "After I bought." },
+      { "id": "a3", "text": "After I bought with 10 side wallets." }
+    ]
+  },
+  {
+    "id": "q12",
+    "type": "image-grid",
+    "question": "Which is your favorite Disney princess?",
+    "questionTextClassName": "mt-[-38px] w-[165px]",
+    "answerClassName": "mt-6 tablet:w-[712px] tablet:mt-[30px] laptop:w-[1106px] laptop:mt-[-30px]",
+    "imageBoxClassName": "-mt-8 w-[220px] h-[243px]",
+    "imageOptions": [
+      { "id": "a1", "image": "/answerImages/q12_a1.png", "label": "Sleeping beauty" },
+      { "id": "a2", "image": "/answerImages/q12_a2.png", "label": "Rapunzel" },
+      { "id": "a3", "image": "/answerImages/q12_a3.png", "label": "Jasmine" },
+      { "id": "a4", "image": "/answerImages/q12_a4.png", "label": "Anna" },
+      { "id": "a5", "image": "/answerImages/q12_a5.png", "label": "Tiana" },
+      { "id": "a6", "image": "/answerImages/q12_a6.png", "label": "Elsa" }
     ]
   }
 ]

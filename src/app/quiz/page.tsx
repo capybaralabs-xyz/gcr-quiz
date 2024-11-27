@@ -22,6 +22,7 @@ export default function Quiz() {
 
     const getCharacterResult = useCallback(() => {
       const result = getHighestScoringCharacter(answers);
+      // const result = 'Milady GCR'
       const characterData = CharacterData[result as keyof typeof CharacterData];
       setResult({
           character: result,
@@ -30,6 +31,10 @@ export default function Quiz() {
       });
   }, [answers]);
   
+  // useEffect(() => {
+  //   getCharacterResult();
+  // }, []);
+
   const handleAnswer = useCallback((answer: string) => {
       setAnswers(prev => ({ ...prev, [questions[currentQuestion].id]: answer }));
       if (currentQuestion < questions.length - 1) {

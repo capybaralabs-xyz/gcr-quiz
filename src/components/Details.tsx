@@ -15,7 +15,7 @@ export const DetailsModal = ({ className }: {  className?: string }) => {
                     <span className="text-base font-diatype-mono">DETAILS</span>
                     <button
                         onClick={test} // Ensure this is within a Client Component
-                        className="rounded hover:bg-gray-600"
+                        className="rounded hover:scale-105 transition-transform duration-150"
                     > 
                         <X className="h-4 w-4" />
                     </button>

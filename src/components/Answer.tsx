@@ -29,7 +29,10 @@ export default function Answer({
             {/* Title Bar */}
             <div className="flex items-center justify-between px-2 py-[10px]">
                 <span className="text-sm font-semibold text-black tablet:text-[10px] laptop:text-[16px] desktop:text-[20px]">
-                    Q{currentQuestion + 1} OF {totalQuestions}
+                    <span className="font-diatype-mono-bold">
+                        Q{currentQuestion + 1}
+                    </span>
+                    <span className="font-diatype-mono"> OF {totalQuestions}</span>
                 </span>
                 <button
                     onClick={onClose}
@@ -46,9 +49,9 @@ export default function Answer({
                     <button
                         key={index}
                         onClick={() => onSelect(option.id)}
-                        className={`w-full rounded border leading-6 border-t-white border-l-white border-b-[#C0C0C0] border-r-[#C0C0C0] bg-[#C0C0C0] px-2 py-[6px] text-left font-mono text-lg shadow-custom-inset
+                        className={`w-full rounded border leading-6 border-t-white border-l-white border-b-[#C0C0C0] border-r-[#C0C0C0] bg-[#C0C0C0] px-2 py-[6px] text-left font-diatype-mono text-lg shadow-custom-inset
                             tablet:text-[19px] tablet:leading-[25px] tablet:px-4 laptop:text-[25px] laptop:leading-[33px] desktop:text-[29px] desktop:leading-[38px] transition-all 
-                            ${selectedAnswer === option.id ? 'bg-[#E8E8E8] border-none shadow-custom-inset-selected' : 'hover:bg-[#E8E8E8] hover:border-none '}
+                            ${selectedAnswer === option.id ? 'bg-[#E8E8E8] border-none shadow-custom-inset-selected' : 'hover:bg-[#E8E8E8]  '}
                             `}
                     >
                         {option.text}
@@ -66,7 +69,7 @@ export default function Answer({
 
                     className={`group w-[123px] relative flex flex-col items-center justify-center rounded-sm shadow-custom-inset border border-t-white border-l-white border-b-[#C0C0C0] border-r-[#C0C0C0] bg-[#C0C0C0] px-2 py-4  transition-colors 
                         tablet:w-[162px]  laptop:w-[261px]
-                     ${selectedAnswer === option.id ? 'bg-[#E8E8E8] border-none shadow-img-grid-inset-selected' : 'hover:bg-[#E8E8E8] hover:border-none '}`}
+                     ${selectedAnswer === option.id ? 'bg-[#E8E8E8] border-none shadow-img-grid-inset-selected' : 'hover:bg-[#E8E8E8] '}`}
                   >
                     <div className="relative mb-4 aspect-square w-16 h-16 flex items-center justify-center
                     tablet:w-[130px] tablet:h-[130px] laptop:w-[229px] laptop:h-[229px]">
