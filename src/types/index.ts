@@ -7,6 +7,7 @@ export type QuestionType = {
   options?: Array<{ id: string; text: string }>;
   imageOptions?: Array<{ id: string; image: string; label: string }>;
   questionTextClassName?: string;
+  answerContextClassName?: string;
   answerClassName?: string;
   imageBoxClassName?: string;
   objectFit?: 'contain' | 'cover';

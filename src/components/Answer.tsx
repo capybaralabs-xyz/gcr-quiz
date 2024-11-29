@@ -24,8 +24,8 @@ export default function Answer({
     className
 }: QuestionDialogProps) {
     return (
-        <div className={cn(`mt-9 z-10 w-[288px] rounded-t-md border-2  border-gray-400 bg-[#989898] shadow-[4px_4px_10px_rgba(0,0,0,0.3)]
-        tablet:w-[475px] tablet:mt-[130px] laptop:w-[591px] laptop:mt-[70px]`, className)}>
+        <div className={cn(`z-10 w-[288px] rounded-t-md border-2  border-gray-400 bg-[#989898] shadow-[4px_4px_10px_rgba(0,0,0,0.3)]
+        tablet:w-[475px] laptop:w-[591px] `, className)}>
             {/* Title Bar */}
             <div className="flex items-center justify-between px-2 py-[10px]">
                 <span className="text-sm font-semibold text-black tablet:text-[10px] laptop:text-[16px] desktop:text-[20px]">

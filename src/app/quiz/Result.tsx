@@ -13,13 +13,17 @@ const IndexDetailsModal = ({data}: {data: ResultType}) => {
         console.log('test')
     }
     const shareOnX = () => {
-        const text = encodeURIComponent(data.text)
+        const text = encodeURIComponent(`${data.character}\n${data.text}`)
         const url = encodeURIComponent('https://x.com/peopleswapfun') // 
         const hashtags = encodeURIComponent('PeopleSwap')
     
         const xShareUrl = `https://twitter.com/intent/tweet?text=${text}&url=${url}&hashtags=${hashtags}`
     
-        window.open(xShareUrl, '_blank')
+        window.open(
+            xShareUrl,
+            "share-on-x",
+            "width=550,height=435,centerscreen=yes,scrollbars=no"
+          )
       }
     return (
         <div className={cn("w-[288px] mt-[91px] tablet:w-[385px] laptop:w-[698px] desktop:w-[1009px]")}>

@@ -60,23 +60,30 @@ export default function Question({
             className="flex flex-col relative items-center justify-center w-full md:self-center"
         >
             <QuestionDescription questionText={question.question}  className={question.questionTextClassName} />
-            <Answer
-                currentQuestion={questionNumber}
-                totalQuestions={questionLength}
-                questionOptions={question}
-                selectedAnswer={selectedAnswer}
-                onSelect={onAnswer}
-                className={question.answerClassName}
-            />
-            {
-                question.type === 'multiple' && (
-                    // <ImageBox image={question.image} className="-mt-8 w-[212px] h-[218px] mb-10"  />
-                    <ImageBox image={question.image} className={cn(`w-full h-full
-                        tablet:absolute tablet:w-[257px] tablet:h-[352px] tablet:top-[64px] tablet:left-[58px] 
-                        laptop:w-[360px] laptop:h-[475px] laptop:top-[460px] laptop:left-[36px] desktop:w-[532px] desktop:h-[643px] desktop:top-[142px] desktop:left-[80px]
-                        `, question.imageBoxClassName)}  />
-                )
-            }
+            <div className={cn("flex flex-col items-center justify-center desktop:flex-row desktop:relative desktop:justify-normal  tablet:mt-[130px] laptop:mt-[70px]", question.answerContextClassName)}>
+                <Answer
+                    currentQuestion={questionNumber}
+                    totalQuestions={questionLength}
+                    questionOptions={question}
+                    selectedAnswer={selectedAnswer}
+                    onSelect={onAnswer}
+                    className={question.answerClassName}
+                />
+                {
+                    question.type === 'multiple' && (
+                        // <ImageBox image={question.image} className="-mt-8 w-[212px] h-[218px] mb-10"  />
+                        <ImageBox image={question.image} className={cn(`w-full h-full
+                            tablet:w-[257px] tablet:h-[352px] 
+                            laptop:w-[360px] laptop:h-[475px] desktop:w-[532px] desktop:h-[643px] desktop:absolute desktop:left-[-100%]
+                            `, question.imageBoxClassName)}  />
+/*                         <ImageBox image={question.image} className={cn(`w-full h-full
+                            tablet:absolute tablet:w-[257px] tablet:h-[352px] tablet:top-[64px] tablet:left-[58px] 
+                            laptop:w-[360px] laptop:h-[475px] laptop:top-[460px] laptop:left-[36px] desktop:w-[532px] desktop:h-[643px] desktop:top-[142px] desktop:left-[80px]
+                            `, question.imageBoxClassName)}  /> */
+                    )
+                }
+            </div>
+        
         </motion.div>
     );
 }
