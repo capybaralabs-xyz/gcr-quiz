@@ -5,7 +5,7 @@
     "question": "How long have you been in crypto?",
     "image": "/questionImages/q1.png",
     "answerContextClassName": "mt-9",
-    "imageBoxClassName": "-mt-5 w-[144px] h-[216px]",
+    "imageBoxClassName": "-mt-5 w-[144px] h-[216px] desktop:h-[643px]",
     "options": [
       { "id": "a1", "text": "1st cycle" },
       { "id": "a2", "text": "2nd cycle" },

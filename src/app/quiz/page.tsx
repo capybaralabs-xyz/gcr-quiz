@@ -123,7 +123,7 @@ const ProgressBar: React.FC<ProgressBarProps> = ({ currentQuestion, totalQuestio
     const handleSegmentClick = (e: React.MouseEvent<HTMLDivElement>) => {
       const target = e.target as HTMLDivElement;
       const index = target.getAttribute('data-index');
-      if (index !== null) {
+      if (index !== null && !isSubmitting) {
         handleSetCurrentQuestion(+index)
       }
     }

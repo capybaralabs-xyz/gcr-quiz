@@ -74,7 +74,7 @@ export default function Question({
                         // <ImageBox image={question.image} className="-mt-8 w-[212px] h-[218px] mb-10"  />
                         <ImageBox image={question.image} className={cn(`w-full h-full
                             tablet:w-[257px] tablet:h-[352px] 
-                            laptop:w-[360px] laptop:h-[475px] desktop:w-[532px] desktop:h-[643px] desktop:absolute desktop:left-[-100%]
+                            laptop:w-[360px] laptop:h-[475px] desktop:w-[532px]  desktop:absolute desktop:left-[-100%]
                             `, question.imageBoxClassName)}  />
 /*                         <ImageBox image={question.image} className={cn(`w-full h-full
                             tablet:absolute tablet:w-[257px] tablet:h-[352px] tablet:top-[64px] tablet:left-[58px] 

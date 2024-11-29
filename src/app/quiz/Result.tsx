@@ -59,7 +59,7 @@ const IndexDetailsModal = ({data}: {data: ResultType}) => {
 
 const  PeopleSwap = ({ setNotification }: { setNotification: Dispatch<SetStateAction<NotificationState>> }) => {
     const handleAction = () => {
-        window.location.replace('https://peopleswap.fun/')
+        window.open('https://peopleswap.fun/', '_blank')
     }
     return (
         <div className='w-[288px] mt-[91px] tablet:mt-[275px] tablet:w-[312px] laptop:w-[421px]'>
