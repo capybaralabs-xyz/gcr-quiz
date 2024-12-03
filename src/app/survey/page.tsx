@@ -179,7 +179,7 @@ const Question: React.FC<{
     {question.type === 'multiple' && question.image && (
       <div className={`w-full md:w-1/2  ${question.imagePosition === 'left' ? 'md:order-first' : 'md:order-last'}`}>
         <div className=" max-w-[720px] px-20 ">
-        <img src={question.image} alt={`Question ${questionNumber}`} className="w-full h-auto object-contain" />
+         <Image src={question.image} alt={`Question ${questionNumber}`} className="w-full h-auto object-contain" />
         </div>
       </div>
     )}
@@ -259,6 +259,7 @@ export default function FullScreenSurvey() {
     if (currentQuestion < questions.length - 1) {
       setCurrentQuestion(prev => prev + 1)
     }
+    console.log(answers, 'answers')
   }
 
   const handleNavigation = (direction: 'up' | 'down') => {
